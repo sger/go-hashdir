@@ -18,6 +18,7 @@ const (
 	MD5    = "md5"
 )
 
+// GetHash create an instance of specific hash algorithm
 func GetHash(name *string) (hash.Hash, error) {
 	if *name == SHA1 {
 		return sha1.New(), nil
