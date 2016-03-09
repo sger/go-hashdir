@@ -12,6 +12,7 @@ import (
 	"path/filepath"
 )
 
+// SHA1, SHA256, MD5
 const (
 	SHA1   = "sha1"
 	SHA256 = "sha256"
@@ -36,6 +37,7 @@ func GetHash(name *string) (hash.Hash, error) {
 func Create(path string, hashAlgorithm string) (string, error) {
 
 	hash, err := GetHash(&hashAlgorithm)
+
 	if err != nil {
 		return "", nil
 	}
