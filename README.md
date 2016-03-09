@@ -9,7 +9,7 @@ package main
 
 import (
 	"fmt"
-	forecast "github.com/sger/go-hashdir"
+	hashdir "github.com/sger/go-hashdir"
 )
 
 func main() {
