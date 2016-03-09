@@ -18,7 +18,7 @@ const (
 	MD5    = "md5"
 )
 
-func CreateHash(name *string) (hash.Hash, error) {
+func GetHash(name *string) (hash.Hash, error) {
 	if *name == SHA1 {
 		return sha1.New(), nil
 	} else if *name == SHA256 {
@@ -31,16 +31,19 @@ func CreateHash(name *string) (hash.Hash, error) {
 	}
 }
 
-// Create an md5 hash with local path
-func Create(path string) (string, error) {
+// Create hash value with local path and a hash algorithm
+func Create(path string, hashAlgorithm string) (string, error) {
 
-	md5Hash := md5.New()
+	hash, err := GetHash(&hashAlgorithm)
+	if err != nil {
+		return "", nil
+	}
 
-	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
+	err = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return nil
 		}
-		io.WriteString(md5Hash, path)
+		io.WriteString(hash, path)
 		return nil
 	})
 
@@ -48,5 +51,5 @@ func Create(path string) (string, error) {
 		return "", nil
 	}
 
-	return fmt.Sprintf("%x", md5Hash.Sum(nil)), nil
+	return fmt.Sprintf("%x", hash.Sum(nil)), nil
 }

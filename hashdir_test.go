@@ -9,10 +9,10 @@ import (
 )
 
 func TestHashDir(t *testing.T) {
-	hash1, err := hashdir.Create("test/directory")
+	hash1, err := hashdir.Create("test/directory", "md5")
 	require.NoError(t, err)
 
-	hash2, err := hashdir.Create("test/directory")
+	hash2, err := hashdir.Create("test/directory", "md5")
 	require.NoError(t, err)
 	fmt.Println(hash1)
 	fmt.Println(hash2)
