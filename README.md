@@ -14,6 +14,7 @@ import (
 
 func main() {
 
+	// Choose sha1 or sha256 hashing algorithms
 	hash, err := hashdir.Create("test/directory", "md5")
 	fmt.Println(hash) // returns d41d8cd98f00b204e9800998ecf8427e
 }

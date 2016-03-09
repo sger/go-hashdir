@@ -24,10 +24,10 @@ func TestHashDir(t *testing.T) {
 
 	require.Equal(t, hash3, hash4, "hash3 and hash4 are equals")
 
-	hash5, err := hashdir.Create("test/directory2", "sha1")
+	hash5, err := hashdir.Create("test/directory2", "sha256")
 	require.NoError(t, err)
 
-	hash6, err := hashdir.Create("test/directory2", "sha1")
+	hash6, err := hashdir.Create("test/directory2", "sha256")
 	require.NoError(t, err)
 
 	require.Equal(t, hash5, hash6, "hash5 and hash6 are equals")
