@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 )
 
-func hashDir(path string) (string, error) {
+func Create(path string) (string, error) {
 
 	md5Hash := md5.New()
 
