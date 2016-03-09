@@ -27,11 +27,11 @@ func GetHash(name *string) (hash.Hash, error) {
 		return sha256.New(), nil
 	} else if *name == MD5 {
 		return md5.New(), nil
-	} else {
-		message := fmt.Sprintf("Hash Algorithm %s is not supported", name)
-		err := errors.New(message)
-		return nil, err
 	}
+	message := "Hash Algorithm is not supported"
+	err := errors.New(message)
+	return nil, err
+
 }
 
 // Create hash value with local path and a hash algorithm
