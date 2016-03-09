@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 )
 
+// Create an md5 hash with local path
 func Create(path string) (string, error) {
 
 	md5Hash := md5.New()
