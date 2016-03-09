@@ -28,7 +28,8 @@ func GetHash(name *string) (hash.Hash, error) {
 	} else if *name == MD5 {
 		return md5.New(), nil
 	} else {
-		err := errors.New("error")
+		message := fmt.Sprintf("Hash Algorithm %s is not supported", name)
+		err := errors.New(message)
 		return nil, err
 	}
 }

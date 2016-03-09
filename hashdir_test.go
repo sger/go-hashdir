@@ -1,7 +1,6 @@
 package hashdir_test
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/sger/go-hashdir"
@@ -14,7 +13,6 @@ func TestHashDir(t *testing.T) {
 
 	hash2, err := hashdir.Create("test/directory", "md5")
 	require.NoError(t, err)
-	fmt.Println(hash1)
-	fmt.Println(hash2)
+
 	require.Equal(t, hash1, hash2, "equals")
 }
