@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/sger/go-hashdir.svg?branch=master)](https://travis-ci.org/sger/go-hashdir)
+[![Coverage Status](https://coveralls.io/repos/github/sger/go-hashdir/badge.svg?branch=master)](https://coveralls.io/github/sger/go-hashdir?branch=master)
 
-# hashdir
+# go-hashdir
 
 Simple package for hashing directory strings 
 
