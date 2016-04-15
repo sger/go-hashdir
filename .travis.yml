@@ -2,6 +2,9 @@ language: go
 go: 
  - 1.5
  - 1.6
+ - tip
 
 script:
- - go test -v
+  - go vet
+  - go test -v
+  - $HOME/gopath/bin/goveralls -service=travis-ci
